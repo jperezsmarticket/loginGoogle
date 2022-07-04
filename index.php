@@ -65,75 +65,70 @@ if (!isset($_SESSION['access_token'])) {
 
 <body>
     <div class="container pt-5">
-        <?php
-        if ($login_button == '') { ?>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Gracias <b><?php echo $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'] ?> </b>, por favor completa la siguiente información para completar tu registro</h3>
-                        </div>
-                        <div class="card-body">
-                            <form action="" method="post">
-                                <input type="hidden" name="fname" value="<?php echo $_SESSION['user_first_name'] ?>">
-                                <input type="hidden" name="lname" value="<?php echo $_SESSION['user_last_name'] ?>">
-                                <input type="hidden" name="email" value="<?php echo $_SESSION['user_email_address'] ?>">
-                                <div class="w-100">
-                                    <table class="table">
-                                        <tbody>
-                                            <tr>
-                                                <td>Tipo de Identificación</td>
-                                                <td>
-                                                    <select id="id_identificacion" name="id_identificacion" class="form-control">
-                                                        <option value="1">Nacional</option>
-                                                        <option value="2">DIMEX</option>
-                                                        <option value="3">Pasaporte</option>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Identificación</td>
-                                                <td>
-                                                    <input type="text" id="identificacion" name="identificacion" class="form-control" placeholder="Consta de 9 dígitos numéricos" maxlength="9" minlength="9">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Teléfono</td>
-                                                <td>
-                                                    <input type="text" id="telefono" name="telefono" class="form-control">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Establezca su clave:</td>
-                                                <td><input type="password" id="clave" name="clave" class="form-control" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Confirmar clave</td>
-                                                <td><input type="password" id="clave2" name="clave2" class="form-control" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <p id="checkaccept"><input type="checkbox"> Estoy de acuerdo con la politica de <a style="text-decoration: underline" target="_blank" href="terminos_condiciones.pdf">Términos de Servicio</a> y <a style="text-decoration: underline" target="_blank" href="politica_privacidad.pdf">Politica de Privacidad</a> los cuales acepto expresamente al marcar esta casilla y continuar con el registro</p>
-                                </div>
-                                <input class="btn btn-primary" type="button" onclick="val()" value="Registrarme">
-                                <input class="btn btn-secondary" type="button" onclick="location.href = 'logout.php'" value="Salir">
-                            </form>
-                        </div>
+        <div class="frmData">
+            <?php
+            if ($login_button == '') { ?>
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Gracias <b><?php echo $_SESSION['user_first_name'] . ' ' . $_SESSION['user_last_name'] ?> </b>, por favor completa la siguiente información para completar tu registro</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            <input type="hidden" name="fname" value="<?php echo $_SESSION['user_first_name'] ?>">
+                            <input type="hidden" name="lname" value="<?php echo $_SESSION['user_last_name'] ?>">
+                            <input type="hidden" name="email" value="<?php echo $_SESSION['user_email_address'] ?>">
+                            <div class="w-100">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Tipo de Identificación</td>
+                                            <td>
+                                                <select id="id_identificacion" name="id_identificacion" class="form-control">
+                                                    <option value="1">Nacional</option>
+                                                    <option value="2">DIMEX</option>
+                                                    <option value="3">Pasaporte</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Identificación</td>
+                                            <td>
+                                                <input type="text" id="identificacion" name="identificacion" class="form-control" placeholder="Consta de 9 dígitos numéricos" maxlength="9" minlength="9">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Teléfono</td>
+                                            <td>
+                                                <input type="text" id="telefono" name="telefono" class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Establezca su clave:</td>
+                                            <td><input type="password" id="clave" name="clave" class="form-control" autocomplete="off">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Confirmar clave</td>
+                                            <td><input type="password" id="clave2" name="clave2" class="form-control" autocomplete="off">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p id="checkaccept"><input type="checkbox"> Estoy de acuerdo con la politica de <a style="text-decoration: underline" target="_blank" href="terminos_condiciones.pdf">Términos de Servicio</a> y <a style="text-decoration: underline" target="_blank" href="politica_privacidad.pdf">Politica de Privacidad</a> los cuales acepto expresamente al marcar esta casilla y continuar con el registro</p>
+                            </div>
+                            <input class="btn btn-primary" type="button" onclick="val()" value="Registrarme">
+                            <input class="btn btn-secondary" type="button" onclick="location.href = 'logout.php'" value="Salir">
+                        </form>
                     </div>
                 </div>
 
             <?php } else { ?>
-                <div class="col-md-12">
-                    <div style="align-items: center;"><?php echo $login_button ?> </div>
-                </div>
+                <div style="align-items: center;"><?php echo $login_button ?> </div>
             <?php } ?>
-
-            </div>
-            <a href="https://wa.me/50683182537" class="float" target="_blank">
-                <i class="fas fa-whatsapp my-float"></i>
-            </a>
+        </div>
+        <a href="https://wa.me/50683182537" class="float" target="_blank">
+            <i class="fas fa-whatsapp my-float"></i>
+        </a>
     </div>
 
     <script src="functions.js"></script>
