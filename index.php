@@ -119,7 +119,6 @@ if (!isset($_SESSION['access_token'])) {
                                 </div>
                                 <input class="btn btn-primary" type="button" onclick="val()" value="Registrarme">
                                 <input class="btn btn-secondary" type="button" onclick="location.href = 'logout.php'" value="Salir">
-                                <!-- <a href="">Logout -->
                             </form>
                         </div>
                     </div>
