@@ -94,7 +94,7 @@ if (!isset($_SESSION['access_token'])) {
                                             <tr>
                                                 <td>Identificación</td>
                                                 <td>
-                                                    <input type="text" id="identificacion" name="identificacion" class="form-control" style="" placeholder="Consta de 9 dígitos numéricos" maxlength="9" minlength="9">
+                                                    <input type="text" id="identificacion" name="identificacion" class="form-control" placeholder="Consta de 9 dígitos numéricos" maxlength="9" minlength="9">
                                                 </td>
                                             </tr>
                                             <tr>
