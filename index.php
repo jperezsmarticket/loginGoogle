@@ -42,7 +42,8 @@ if (isset($_GET["code"])) {
 
 //Ancla para iniciar sesión
 if (!isset($_SESSION['access_token'])) {
-    $login_button = '<a href="' . $google_client->createAuthUrl() . '" style=" background: #dd4b39; border-radius: 5px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 200px;">Registro con Google</a>';
+    $login_button = '<a href="' . $google_client->createAuthUrl() . '" style=" background: #dd4b39; border-radius: 10px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 100%;">Registro con Google</a> <hr>
+    <a href="#" style=" background: #1f2fd8; border-radius: 10px; color: white; display: block; font-weight: bold; padding: 20px; text-align: center; text-decoration: none; width: 100%;">Registro con Facebok</a>';
 }
 ?>
 
